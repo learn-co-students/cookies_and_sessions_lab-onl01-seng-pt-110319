@@ -1,0 +1,14 @@
+<% if @cart %>
+<% @cart.each do |item| %>
+	<%= item %>
+	<%end%>
+	<% else  %>
+	<% session[:cart].each do |item|  %>
+	<%= item %>
+<% end %>
+<% end %>
+
+<%= form_tag add_path do %>
+<%= text_field_tag :"product" %>
+<%= submit_tag "add to cart" %>
+<% end %>
